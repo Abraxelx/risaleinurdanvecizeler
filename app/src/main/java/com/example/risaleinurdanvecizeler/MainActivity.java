@@ -1,6 +1,8 @@
 package com.example.risaleinurdanvecizeler;
 
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Toast;
@@ -12,6 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -47,9 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
         mRecyclerView = findViewById(R.id.recyleview);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-       // myAdapter = new Adapter(this, quotesModels);
+        // myAdapter = new Adapter(this, quotesModels);
         //mRecyclerView.setAdapter(myAdapter);
-
 
 
 
@@ -67,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        Retrofit retrofit = new  Retrofit.Builder()
+        Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(QuoteApi.URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -78,15 +80,13 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<List<QuotesModel>>() {
             @Override
             public void onResponse(Call<List<QuotesModel>> call, Response<List<QuotesModel>> response) {
-                if(!response.isSuccessful()){
+                if (!response.isSuccessful()) {
 
                     Toast.makeText(getApplicationContext(), response.code(), Toast.LENGTH_LONG).show();
                 }
-
                 quotesModels = response.body();
-                myAdapter = new Adapter(MainActivity.this,quotesModels);
+                myAdapter = new Adapter(MainActivity.this, quotesModels);
                 mRecyclerView.setAdapter(myAdapter);
-
             }
 
             @Override
@@ -95,8 +95,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
 
 
@@ -104,7 +102,14 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Toast.makeText(getApplicationContext(), "Test", Toast.LENGTH_LONG).show();
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
