@@ -1,5 +1,7 @@
 package com.example.risaleinurdanvecizeler;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -10,6 +12,7 @@ import android.widget.Toast;
 import com.example.risaleinurdanvecizeler.jsonModels.QuoteApi;
 import com.example.risaleinurdanvecizeler.model.QuotesModel;
 import com.example.risaleinurdanvecizeler.model.Adapter;
+import com.example.risaleinurdanvecizeler.ui.login.LoginActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -108,7 +111,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent intent =  new Intent(this, LoginActivity.class);
         Toast.makeText(getApplicationContext(), "Test", Toast.LENGTH_LONG).show();
+        startActivity(intent);
         return super.onOptionsItemSelected(item);
     }
 
