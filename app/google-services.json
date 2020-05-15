@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "124942452977",
+    "firebase_url": "https://risaleinurdanvecizeler-5de4a.firebaseio.com",
+    "project_id": "risaleinurdanvecizeler-5de4a",
+    "storage_bucket": "risaleinurdanvecizeler-5de4a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124942452977:android:a84ad110dbaa4f5ea50150",
+        "android_client_info": {
+          "package_name": "com.example.risaleinurdanvecizeler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "124942452977-j11c4aa0a3au29ni0nfi15o9m6pmii7g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP9zEV97FjvuV4yaLsA47RrvV4x6gWkQc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "124942452977-j11c4aa0a3au29ni0nfi15o9m6pmii7g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
